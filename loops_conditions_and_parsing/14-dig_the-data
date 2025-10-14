@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# 14-dig_the-data
+
+awk '{count[$1" "$9]++} END {for (key in count) printf "%7d %s\n", count[key], key}' apache-access.log | sort -nr
